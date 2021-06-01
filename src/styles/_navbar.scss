@@ -1,0 +1,20 @@
+nav{
+    min-height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #353534;
+
+    .autocomplete{
+        padding: 0.1rem;
+        margin: 1rem;
+        border-radius: 5px;
+    }
+
+    h1{
+        font-family: 'Pattaya', sans-serif;
+        padding: 0% 2%;
+        font-weight: 800;
+        color: rgb(241, 241, 241);
+    }
+}
