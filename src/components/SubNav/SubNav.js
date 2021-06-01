@@ -11,10 +11,11 @@ const SubNav = ({ stateName, setStateName }) => {
       <div className="sub-SubNav">
         <h1>{stateName}</h1>
         <Autocomplete
+          className="autocomplete"
           onChange={(event, value) => setStateName(value)}
           id="combo-box-demo"
           options={stateList}
-          style={{ width: 300, backgroundColor: "GrayText" }}
+          style={{  backgroundColor: "GrayText" }}
           renderInput={(params) => (
             <TextField
               {...params}

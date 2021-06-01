@@ -10,7 +10,7 @@ const Home = () => {
   const [data, setData] = useState({});
   const [statusBar, setStatusBar] = useState({});
   useEffect(()=>{
-    axios.get("http://localhost:9000/").then((data) => {
+    axios.get("https://covid-api2021.herokuapp.com/").then((data) => {
       setData(data.data);
     });
   },[])
