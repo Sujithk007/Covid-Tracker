@@ -7,9 +7,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    .autocomplete{
-          width: 300px;
-        }
+    .autocomplete {
+      width: 300px;
+    }
     h1 {
       font-size: 1.7rem;
       padding-left: 0.8rem;
@@ -22,14 +22,17 @@
 }
 
 @media screen and (max-width: 500px) {
-        h1{
-          font-size: 0.4 rem;
-          margin-right: 0.4rem;
-        }
-        .autocomplete{
-          width: 50px;
-        }
-        .sub-SubNav{
-          padding: 0.3rem;
-        }
+  .SubNav {
+    .sub-SubNav {
+      padding: 1 0.2rem;
+      .autocomplete {
+        width: 200px;
       }
+      h1 {
+        font-size: 1.2rem;
+        padding: 0 0.3rem;
+        text-align: center;
+      }
+    }
+  }
+}
