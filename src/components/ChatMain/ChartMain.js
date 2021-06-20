@@ -2,17 +2,16 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 
 import ChartDiv from "../ChartDiv/ChartDiv";
-
 const ChartMain = ({ data }) => {
    let conformed = [];
    let recovered = [];
    let dead = [];
-   let vaccinated = [];
+   let tested = [];
   if (data) {
     conformed = data.conformed;
     recovered = data.recovered;
     dead = data.dead;
-    vaccinated = data.vaccinated;
+    tested = data.tested;
   }
   
   return (
@@ -25,14 +24,7 @@ const ChartMain = ({ data }) => {
       >
         <Grid item md={5} sm={10} xs={11} spacing={1}>
           <ChartDiv
-            topColor="#f9ffbf"
-            fontColor="#cc8605"
-            chartTitle="Active Cases"
-            chartData={conformed}
-          />
-        </Grid>
-        <Grid item md={5} sm={10} xs={11} spacing={1}>
-          <ChartDiv
+            key="3"
             topColor="#D6FFD2"
             fontColor="#16A669"
             chartTitle="Recoverd Cases"
@@ -41,18 +33,29 @@ const ChartMain = ({ data }) => {
         </Grid>
         <Grid item md={5} sm={10} xs={11} spacing={1}>
           <ChartDiv
-            topColor="#FFD2D2"
-            fontColor="#EF1313"
-            chartTitle="Death Cases"
-            chartData={dead}
+            key="4"
+            topColor="#AFE7EB"
+            fontColor="#3D50FF"
+            chartTitle="Tested Cases"
+            chartData={tested}
           />
         </Grid>
         <Grid item md={5} sm={10} xs={11} spacing={1}>
           <ChartDiv
-            topColor="#AFE7EB"
-            fontColor="#3D50FF"
-            chartTitle="Vaccinated"
-            chartData={vaccinated}
+            key="2"
+            topColor="#f9ffbf"
+            fontColor="#cc8605"
+            chartTitle="Active Cases"
+            chartData={conformed}
+          />
+        </Grid>
+        <Grid item md={5} sm={10} xs={11} spacing={1}>
+          <ChartDiv
+            key="1"
+            topColor="#FFD2D2"
+            fontColor="#EF1313"
+            chartTitle="Death Cases"
+            chartData={dead}
           />
         </Grid>
       </Grid>

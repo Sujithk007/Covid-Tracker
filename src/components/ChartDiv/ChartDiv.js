@@ -1,46 +1,12 @@
 import React from "react";
-import { Line } from "react-chartjs-2";
-
-
-
-const legend = {
-  display: true,
-  position: "bottom",
-  labels: {
-    fontColor: "#323130",
-    fontSize: 14,
-  },
-};
-
-const options = {
-  title: {
-    display: true,
-    text: "Chart Title",
-  },
-  scales: {
-    yAxes: [
-      {
-        ticks: {
-          suggestedMin: 0,
-          suggestedMax: 100,
-        },
-      },
-    ],
-  },
-};
+import Chart from "react-google-charts";
 
 const ChartDiv = ({ topColor, fontColor, chartTitle, chartData }) => {
-  const data = {
-    datasets: [
-      {
-        label: chartTitle,
-        data: chartData,
-        fill: true,
-        backgroundColor: topColor,
-        borderColor: fontColor,
-      },
-    ],
-  };
+  const data = [["Date", "Cases"]];
+  chartData.forEach((i) => {
+    data.push([i.x, i.y]);
+  });
+  
   return (
     <div className="chartDiv">
       <div
@@ -50,7 +16,36 @@ const ChartDiv = ({ topColor, fontColor, chartTitle, chartData }) => {
         <h1>{chartTitle}</h1>
       </div>
       <div className="chart-body">
-        <Line data={data} legend={legend} options={options} />
+        <Chart
+          width={"100%"}
+          height={"300px"}
+          margin="0"
+          chartType="LineChart"
+          loader={<div>Loading Chart</div>}
+          data={data}
+          options={{
+            chartArea: {
+              left: 30,
+              //   right: 10,
+              width: "90%",
+            },
+            legend: "none",
+            colors: [`${fontColor}`],
+            // backgroundColor: "fill",
+            type: "area",
+            color: `${fontColor}`,
+            // visibleInLegend: false,
+            lineWidth: 3,
+            pointSize: 7,
+            // hAxis: {
+            //   title: "Time",
+            // },
+            // vAxis: {
+            //   title: "Popularity",
+            // },
+          }}
+          rootProps={{ "data-testid": "1" }}
+        />
       </div>
     </div>
   );
